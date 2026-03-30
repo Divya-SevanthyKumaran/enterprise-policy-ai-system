@@ -1,0 +1,449 @@
+.chat-page {
+    width: 60%;
+    margin: 40px auto;
+    text-align: center;
+}
+
+
+.chat-container {
+    background: #f9f9f9;
+    padding: 15px;
+    height: 400px;
+    overflow-y: auto;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+
+.user {
+    background-color: #0d6efd;
+    color: white;
+    margin-left: auto;
+    text-align: right;
+}
+
+.ai {
+    background-color: #e9ecef;
+    color: black;
+    margin-right: auto;
+    text-align: left;
+}
+
+.chat-form {
+    margin-top: 15px;
+    display: flex;
+    gap: 10px;
+}
+
+.chat-form input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+.chat-form button {
+    padding: 10px 15px;
+    border: none;
+    background-color: #198754;
+    color: white;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.chat-form button:hover {
+    background-color: #157347;
+}
+
+.clear-form {
+    margin-top: 10px;
+}
+
+.clear-btn {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.clear-btn:hover {
+    background-color: #bb2d3b;
+}
+
+#overlay {
+    top : 0;
+    left : 0;
+    height : 100%;
+    width : 100%;
+    position : fixed;
+    background : rgba(0,0,0,0.5);
+    display : none
+}
+
+#overlay.active {
+    display : block;
+}
+#loginPanel {
+    position : fixed;
+    top : 0;
+    right : 0;
+    height : 100%;
+    width : 320px;
+    background : white;
+    transition : right 0.3s ease;
+    padding : 20px;
+    box-shadow : -2px 0 10px rgba(0,0,0,0.3);
+    transform : translateX(100%);
+    z-index: 1001;
+    visibility: hidden;
+}
+
+#loginPanel.active {
+    transform : translateX(0);
+    visibility: visible;
+}
+.close-button {
+    float : right;
+    cursor : pointer;
+    font-size : 20px;
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;  /* 👈 KEY FIX */
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #2c3e50;
+    color: white;
+    font-size: 30px;
+}
+
+.navbar a::before {
+    content : "|";
+    position : absolute;
+    left: 5px;
+    color:white;
+}
+
+.login-btn {
+    color: white;
+    background-color: #8fc3e5;
+    padding: 8px 16px;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* HERO CONTAINER */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 40vh; /* adjust height */
+}
+
+/* IMAGE */
+.hero img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    display : block;
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.4);
+}
+
+/* TEXT OVER IMAGE */
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* perfect center */
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+/* TEXT STYLING */
+.hero-text h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero-text p {
+    font-size: 20px;
+}
+
+/* ABOUT SECTION */
+.about-section {
+    display: flex;
+    justify-content: center;   /* horizontal center */
+    align-items: center;       /* vertical center */
+    padding: 80px 20px;
+    background-color: #f9f9f9;
+    height : 30vh;
+}
+
+/* Content box */
+.about-content {
+    max-width: 800px;
+    margin :auto;
+    text-align: center;
+}
+
+/* Heading */
+.about-content h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+/* Paragraphs */
+.about-content p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.login-page {
+    background-color: lightpink;
+}
+
+.login-page h3 {
+    font-size: 25px;
+    font-style: oblique;
+}
+
+.login-page p {
+    font-size: 20px;
+}
+
+.login-page input {
+    padding : 5px;
+    border-radius: 20%;
+}
+
+/* CENTER WHOLE PAGE */
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 80px);
+}
+
+/* CARD */
+.register-card {
+    width: 350px;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.subtitle {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+.register-card input,
+.register-card select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* BUTTON */
+.register-card button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.register-card button:hover {
+    background-color: #2980b9;
+}
+
+/* LOGIN LINK */
+.login-link {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.hr-navbar {
+    display : flex;
+    background-color: lightskyblue;
+    gap : 20px;
+    padding : 10px 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.hr-navbar a:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: -5px;
+    color: black;
+}
+
+.hr-navbar .logout {
+    margin-left: auto;
+    color : red;
+}
+
+.hr-main {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.hr-left {
+    width: 30%;
+    background: #f4f4f4;
+    padding: 15px;
+}
+
+.hr-right {
+    width: 70%;
+    background: #ffffff;
+    padding: 15px;
+}
+
+.upload-container {
+    width: 400px;
+    margin: 50px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+
+.upload-form input, .upload-form select {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #aaa;
+}
+
+.upload-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #0d6efd;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.upload-form button:hover {
+    background-color: #0b5ed7;
+}
+
+.page-container {
+    width: 90%;
+    margin: 40px auto;
+}
+
+.title {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.policy-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.policy-table th {
+    background-color: #0d6efd;
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.policy-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.policy-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.btn {
+    padding: 6px 12px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.empty {
+    text-align: center;
+    margin-top: 20px;
+    color: #777;
+}
+
+.form-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+form label {
+    display: block;
+    margin-top: 10px;
+    font-weight: 600;
+}
+
+form input, form select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+.update-btn {
+    margin-top: 20px;
+    width: 100%;
+    padding: 10px;
+    background-color: #198754;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+}

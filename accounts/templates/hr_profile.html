@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+    <div class="hr-navbar">
+        <a href="{% url 'upload_policy' %}">Upload Policy</a>
+        <a href="{% url 'view_policies' %}">View Policies</a>
+        <a href="{% url 'users_list' %}">Users</a>
+    </div>
+    <div class="hr-main">
+        <div class="hr-left">
+            <h3>Profile Details</h3>
+            <p>Name : {{request.user.username}}</p>
+            <p>Email : {{request.user.email}}</p>
+            <p>Department : HR </p>
+        </div>
+        <div class="hr-right">
+            <h3>Ask AI</h3>
+            <a href="{% url 'ask' %}">Go to Chatbot</a>
+        </div>
+    </div>
+{% endblock %}

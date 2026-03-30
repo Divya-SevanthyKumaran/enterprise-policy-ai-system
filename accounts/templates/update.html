@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<form method='POST'>
+    {% csrf_token %}
+    username 
+    <input type="text" name="username" value="{{request.user.username}}" required>
+    email
+    <input type="email" name="email" value="{{request.user.email}}" required>
+    date_of_birth
+    <input type="date" name="date_of_birth" value="{{profile.date_of_birth}}" required>
+    gender
+    <input type="radio"><label>Male</label>
+    <input type="radio"><label>Female</label>
+    <input type="radio"><label>Others</label>
+    <button type="submit">Save</button>
+</form>
+{% endblock %}

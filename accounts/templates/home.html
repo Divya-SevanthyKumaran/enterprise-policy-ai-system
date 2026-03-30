@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- HERO -->
+<div class="hero">
+    <img src="{% static 'home.jpg' %}" alt="Blur Background">
+    <div class="hero-text"><h1>Welcome to Sahi Enterprise</h1>
+    <p>Smart Document Search using AI-powered RAG system</p>
+    <p>Upload, search, and get instant answers from your data</p>
+    </div>
+</div>
+
+<!-- ABOUT SECTION -->
+<div class="about-section">
+    <div class="about-content">
+        <h2>What This Project Does</h2>
+
+        <p>
+            Sahi Enterprise is an AI-powered document search platform built using 
+            Retrieval-Augmented Generation (RAG).
+        </p>
+
+        <p>
+            Users can upload documents, and the system converts them into embeddings 
+            stored in a vector database. When a question is asked, the system retrieves 
+            the most relevant content and generates accurate answers using AI models.
+        </p>
+
+        <p>
+            This enables fast, intelligent, and context-aware information retrieval 
+            from large datasets.
+        </p>
+    </div>
+</div>
+
+{% endblock %}

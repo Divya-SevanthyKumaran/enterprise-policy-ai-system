@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+    <html>
+        <head>
+            <title>Sahi Enterprise</title>
+            <link rel="stylesheet" href="{% static 'webpage.css' %}">
+            <script src="{% static 'webpage.js' %}" defer></script>
+        </head>
+        <body>
+        <header>
+            <div class="navbar">
+                <div>Sahi Enterprise</div>
+                <div>
+                   {% if user.is_authenticated %}
+                      <span class="welcome-text">Welcome,{{user.username}}</span>
+                      <a href="{% url 'logout' %}" style="color:white;">Logout</a>
+                   {% else %}
+                      <button class="login-btn" id="login" onClick="openPanel()">Login</button>
+                   {% endif %}
+                </div>
+            </div>
+        </header>
+                <div>
+                <div id="overlay" onclick="closePanel()"></div>   
+                <div class="login-page" id="loginPanel">
+                    <button id="close-button" onClick="closePanel()">Close</button>
+                    <h3>Sign In to Sahi Enterprise</h3><br>
+                    <p>* Required Fields</p><br>
+                    <form method="POST" action="{% url 'login' %}">
+                        {% csrf_token %}
+                    <label>Username</label><br>
+                    <input type="text" id="username" name="username" Required><br><br>
+                    <label>Password</label><br>
+                    <input type="password" id="password" name="password" Required><br><br>
+                    <button type="submit" name="login">Login</button><br><br>
+                    <a href="{% url 'register' %}">New User</a>
+                    </form>
+                </div> 
+            {% block content %}
+            {% endblock %}
+        </body>
+    </html>

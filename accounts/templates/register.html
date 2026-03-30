@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="register-container">
+        <form method="POST" class="register-card">
+            {% csrf_token %}
+            <h2>Create Account</h2>
+            <p class="subtitle">Join Sahi Enterprise</p>
+            <label>Username</label><br>
+            <input type="text" name="username"><br>
+
+            <label>Email</label><br>
+            <input type="email" name="email"><br>
+
+            <label>Password</label><br>
+            <input type="password" name="password"><br>
+
+            <select name="department">
+                <option value="">Department</option>
+                <option value="HR">HR</option>
+                <option value="IT">IT</option>
+                <option value="F">Finance</option>
+            </select><br>
+
+            <label>Date_of_birth</label><br>
+            <input type="date" name="date_of_birth"><br>
+
+            <select name="gender">
+                <option value="">Select Gender</option>
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+                <option value="O">Others</option>
+            </select><br>
+
+            <button type="submit" name="button">Register</button>
+            <button type="reset" name="reset">Reset</button>
+            
+            <p class="login-link">
+            Already have an account? 
+            <a href="#" onclick="openPanel()">Login</a>
+            </p>
+        </form>
+</div>
+
+{% endblock %}

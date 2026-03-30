@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="chat-page">
+        <h1 class="title">Ask Questions</h1>
+        {% if chat_history %}
+        <div class="chat-container">
+            {% for chat in chat_history %}
+            <div class="message {% if chat.role == 'user' %} user {% else %} ai {% endif %}">
+                {{chat.content}}
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        <form method="post" class="chat-form">
+         {% csrf_token %}
+          <input type="text" name="question" placeholder="Type your message...">
+          <button type="submit">Send</button>
+        </form>
+        <form method="POST" action={% url 'clear-chat' %} class="clear-form">
+            {% csrf_token %}
+            <button type="submit">Clear Chat</button>
+        </form>
+</div>
+{% endblock %}
+     

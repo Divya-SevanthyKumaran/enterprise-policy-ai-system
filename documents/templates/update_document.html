@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="page-container">
+    <h2 class="title">Update Policy</h2>
+
+    <div class="form-card">
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label>Policy Title</label>
+            {{ form.policy_title }}
+
+            <label>Department</label>
+            {{ form.department }}
+
+            <label>Replace File (optional)</label>
+            {{ form.file_reference }}
+
+            <button type="submit" class="btn update-btn">Update Policy</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
