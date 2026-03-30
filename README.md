@@ -44,6 +44,22 @@ An AI-powered web application built using Django that allows users to query ente
 
 ---
 
+## 📸 Screenshots
+
+### 🔐 Home and Login Page
+![Login](screenshots/Home_Login.png)
+
+### 💬 Chat Interface
+![Chat](screenshots/ChatBot.png)
+
+### 📄 HR Dashboard
+![Upload](screenshots/HR_Dashboard.png)
+
+### Register
+![Register](screenshots/Register_Page.png)
+
+---
+
 ## 🔮 Future Improvements
 - UI enhancements
 - Query classification improvements
